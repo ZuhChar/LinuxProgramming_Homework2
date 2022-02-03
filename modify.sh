@@ -11,7 +11,7 @@ fi
 for argument in $@; do
     if [[ $argument == *.txt ]];
     then 
-        ed -s $arg 
+        ed -l $argument 
         a
         Modified on: $(date)
         .
