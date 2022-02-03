@@ -12,7 +12,11 @@ for argument in $@; do
     if [[ $argument == *.txt ]];
     then 
         ed -s $arg <<END
-            w "Hello World"
+            a 
+            "Hello World"
+            .
+            w $argument
+            q
 END
     elif [ -d "$argument" ];
     then
