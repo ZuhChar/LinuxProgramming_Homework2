@@ -9,9 +9,10 @@ fi
 
 #For loop to run through all of the arguments given
 for arguments in $#;
-    if [ $# -eq "*.txt" ];
+    if [ $1 -eq "*.txt" ];
     then 
         echo "This is a text file"
+
     elif [ -d $# ];
     then
         echo "modify: $#, is a directory."
