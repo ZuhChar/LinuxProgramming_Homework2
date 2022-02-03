@@ -21,4 +21,5 @@ for arguments in $#; do
         echo "modify: $#, cannot edit executables."
     else
         echo "modify: $#, filetype not supported."
-fi
+    fi
+done;
