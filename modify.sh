@@ -13,6 +13,7 @@ for argument in $@; do
     then 
         ed -s $argument <<END
             r !date +'Modified on \%F'
+            r 'Modified by: zachary_crimmel'
             w $argument
             q
 END
