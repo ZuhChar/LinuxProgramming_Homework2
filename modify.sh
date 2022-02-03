@@ -12,7 +12,7 @@ for argument in $@; do
     if [[ $argument == *.txt ]];
     then 
         ed -s $argument <<END
-            r !date +'Modified on \%F \%n Modified by: zachary_crimmel'
+            r !date +'Modified on: \%A \%B \%d \%T \%y \%nModified by: zachary_crimmel'
             w $argument
             q
 END
