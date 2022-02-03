@@ -8,18 +8,18 @@ then
 fi
 
 #For loop to run through all of the arguments given
-for argument in "$@"; do
-    if [[ "$argument" == "*.txt" ]];
+for argument in $@; do
+    if [[ $argument == "*.txt" ]];
     then 
         echo "This is a text file"
 
-    elif [ -d $# ];
+    elif [ -d $argument ];
     then
-        echo "modify: $#, is a directory."
-    elif [ "$argument" == "*.exe" ];
+        echo "modify: $argument, is a directory."
+    elif [ $argument == "*.exe" ];
     then
-        echo "modify: $#, cannot edit executables."
+        echo "modify: $argument, cannot edit executables."
     else
-        echo "modify: $#, filetype not supported."
+        echo "modify: $argument, filetype not supported."
     fi
 done;
