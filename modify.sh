@@ -8,8 +8,8 @@ then
 fi
 
 #For loop to run through all of the arguments given
-for arguments in $#;
-    if [[ "$1" == "*.txt" ]];
+for arguments in $#; do
+    if [[ "$#" == "*.txt" ]];
     then 
         echo "This is a text file"
 
