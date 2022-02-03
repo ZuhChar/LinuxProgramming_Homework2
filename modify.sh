@@ -11,8 +11,8 @@ fi
 for argument in $@; do
     if [[ $argument == *.txt ]];
     then 
-        echo "This is a text file"
-
+        ed -s $argument 
+            "Hello World"
     elif [ -d "$argument" ];
     then
         echo "modify: $argument, is a directory."
