@@ -12,9 +12,7 @@ for argument in $@; do
     if [[ $argument == *.txt ]];
     then 
         ed -s $arg <<END
-            r !date +'Modified on \%F'
-            w $arg
-            q
+            w "Hello World"
 END
     elif [ -d "$argument" ];
     then
