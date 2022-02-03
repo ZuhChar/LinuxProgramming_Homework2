@@ -11,12 +11,11 @@ fi
 for argument in $@; do
     if [[ $argument == *.txt ]];
     then 
-        ed -l $argument 
-        a
-        Modified on: $(date)
-        .
-        w $argument
-        q
+        ed -s $argument <<END
+            r !date +'Modified on \%F'
+            w $argument
+            q
+END
     elif [ -d "$argument" ];
     then
         echo "modify: $argument, is a directory."
