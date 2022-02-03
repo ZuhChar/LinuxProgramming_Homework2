@@ -8,15 +8,15 @@ then
 fi
 
 #For loop to run through all of the arguments given
-for arguments in $#; do
-    if [[ "$#" == "*.txt" ]];
+for argument in "$@"; do
+    if [[ "$argument" == "*.txt" ]];
     then 
         echo "This is a text file"
 
     elif [ -d $# ];
     then
         echo "modify: $#, is a directory."
-    elif [ $# -eq "*.exe" ];
+    elif [ "$argument" == "*.exe" ];
     then
         echo "modify: $#, cannot edit executables."
     else
