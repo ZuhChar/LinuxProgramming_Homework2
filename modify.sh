@@ -8,13 +8,13 @@ then
 fi
 
 for arguments in $#;
-    if [[ "$#" == "*.txt" ]];
+    if [[ "$#" -eq "*.txt" ]];
     then 
         echo "This is a text file"
     elif [[ -d $# ]];
     then
         echo "modify: $#, is a directory."
-    elif [[ "$#" == "*.exe" ]];
+    elif [[ "$#" -eq "*.exe" ]];
     then
         echo "modify: $#, cannot edit executables."
     else
