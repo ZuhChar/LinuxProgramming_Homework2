@@ -7,14 +7,15 @@ then
     exit 1
 fi
 
+#For loop to run through all of the arguments given
 for arguments in $#;
-    if [[ "$#" -eq "*.txt" ]];
+    if [[ $# -eq "*.txt" ]];
     then 
         echo "This is a text file"
     elif [[ -d $# ]];
     then
         echo "modify: $#, is a directory."
-    elif [[ "$#" -eq "*.exe" ]];
+    elif [[ $# -eq "*.exe" ]];
     then
         echo "modify: $#, cannot edit executables."
     else
