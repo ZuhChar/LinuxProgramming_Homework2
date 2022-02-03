@@ -9,14 +9,14 @@ fi
 
 #For loop to run through all of the arguments given
 for argument in $@; do
-    if [[ $argument == "*.txt" ]];
+    if [[ $argument == *.txt ]];
     then 
         echo "This is a text file"
 
-    elif [ -d $argument ];
+    elif [ -d "$argument" ];
     then
         echo "modify: $argument, is a directory."
-    elif [ $argument == "*.exe" ];
+    elif [ $argument == *.exe ];
     then
         echo "modify: $argument, cannot edit executables."
     else
