@@ -7,12 +7,18 @@ then
     exit 1
 fi
 
+DAY = $(date +"%A")
+MONTH = $(date +"%b %d")
+YEAR = $(date +"%Y")
+TIME = $(date +"%H%M")
+
+
 #For loop to run through all of the arguments given
 for argument in $@; do
     if [[ $argument == *.txt ]];
     then 
         ed -s $argument <<END
-            r !date +'Modified on: \%A, \%b \%d, \%Y: \%H%M \%nModified by: zachary_crimmel'
+            r !date +'Modified on: $DAY, $MONTH, $YEAR: $TIME \%nModified by: zachary_crimmel'
             w $argument
             q
 END
