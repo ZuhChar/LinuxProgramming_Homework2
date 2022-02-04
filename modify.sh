@@ -1,5 +1,5 @@
 #! /bin/bash
-
+#Collaborated with Ian Moon to complete this
 #Check to see if there is no arguments passed to the script
 if [ $# -eq 0 ]; 
 then
@@ -24,7 +24,7 @@ for argument in $@; do
 END_ED
         sed -i 's/Gradez/Grades/g' "$argument"
         ed -s $argument <<END
-            r !date +'Modified on: $DAY, $MONTH, $YEAR: $TIME \%nModified by: zachary_crimmel'
+            r !date +'Modified on: $DAY, $MONTH, $YEAR: $TIME %\nModified by: zachary_crimmel'
             w $argument
             q
 END
