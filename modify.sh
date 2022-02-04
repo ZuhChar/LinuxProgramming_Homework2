@@ -15,7 +15,7 @@ TIME=$(date +"%H%M")
 
 #For loop to run through all of the arguments given
 for argument in $@; do
-    if [[ "$(file "$f")" = "$f: ASCII" ]];
+    if file "$argument" | grep ascii;
     then 
         sed -e '1t2' "$argument"
         sed -i 's/Gradez/Grades/g' "$argument"
@@ -24,7 +24,6 @@ for argument in $@; do
             w $argument
             q
 END
-    echo "This is a ACII file"
     elif [ -d "$argument" ];
     then
         echo "modify: $argument, is a directory."
