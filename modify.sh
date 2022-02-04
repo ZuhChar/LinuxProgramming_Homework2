@@ -32,7 +32,7 @@ END
     elif [ -d "$argument" ];
     then
         echo "modify: $argument, is a directory."
-    elif [ $argument == *.exe ];
+    elif [ -x "$argument" ];
     then
         echo "modify: $argument, cannot edit executables."
     else
