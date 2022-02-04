@@ -15,7 +15,7 @@ TIME=$(date +"%H%M")
 
 #For loop to run through all of the arguments given
 for argument in $@; do
-    if [[ "$(file "$f")" = "$f: ASCII text" ]];
+    if [[ "$(file "$f")" = "$f: ASCII" ]];
     then 
         sed -e '1t2' "$argument"
         sed -i 's/Gradez/Grades/g' "$argument"
