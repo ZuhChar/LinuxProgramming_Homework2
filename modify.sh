@@ -23,7 +23,7 @@ for argument in $@; do
             q
 END
         ed -s $argument <<%
-        s/Gradez/Grades
+        r s/Gradez/Grades
         w $argument
         q
 %
