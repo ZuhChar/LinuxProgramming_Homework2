@@ -11,6 +11,7 @@ DAY=$(date +"%A")
 MONTH=$(date +"%b %d")
 YEAR=$(date +"%Y")
 TIME=$(date +"%H%M")
+NEWLINE=$(date +"%n")
 
 
 #For loop to run through all of the arguments given
@@ -18,8 +19,7 @@ for argument in $@; do
     if [[ $argument == *.txt ]];
     then 
         ed -s $argument <<END
-            r !date +'Modified on: $DAY, $MONTH, $YEAR: $TIME' 
-            Modified by: zachary_crimmel
+            r !date +'Modified on: $DAY, $MONTH, $YEAR: $TIME $NEWLINEModified by: zachary_crimmel'
             w $argument
             q
 END
