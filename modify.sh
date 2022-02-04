@@ -11,7 +11,7 @@ DAY=$(date +"%A")
 MONTH=$(date +"%b %d")
 YEAR=$(date +"%Y")
 TIME=$(date +"%H%M")
-NEWLINE=$("%n")
+NEWLINE="%n"
 
 
 #For loop to run through all of the arguments given
