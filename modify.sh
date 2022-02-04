@@ -17,7 +17,7 @@ TIME=$(date +"%H%M")
 for argument in $@; do
     if file "$argument" | grep ASCII;
     then 
-        ed $argument 1,1m2
+        ed 1,1m2 "$argument"
         sed -i 's/Gradez/Grades/g' "$argument"
         ed -s $argument <<END
             r !date +'Modified on: $DAY, $MONTH, $YEAR: $TIME \%nModified by: zachary_crimmel'
