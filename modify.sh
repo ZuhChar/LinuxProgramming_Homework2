@@ -17,16 +17,17 @@ TIME=$(date +"%H%M")
 for argument in $@; do
     if [[ $argument == *.txt ]];
     then 
-        ed -s 1,3 $argument <<END
+        ed -s 1,3 $argument <<1
         s/Gradez/Grades/g
         w $argument
         q
-END
+1
         ed -s $argument <<END
             r !date +'Modified on: $DAY, $MONTH, $YEAR: $TIME \%nModified by: zachary_crimmel'
             w $argument
             q
 END
+    echo "This is a ACII file"
     elif [ -d "$argument" ];
     then
         echo "modify: $argument, is a directory."
