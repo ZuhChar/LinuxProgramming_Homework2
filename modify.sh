@@ -17,11 +17,7 @@ TIME=$(date +"%H%M")
 for argument in $@; do
     if [[ $argument == *.txt ]];
     then 
-        ed -s 1,3 $argument <<END
-        s/Gradez/Grades/g
-        w $argument
-        q
-END
+        sed -i 's/Gradez/Grades/g' "$argument"
         ed -s $argument <<END
             r !date +'Modified on: $DAY, $MONTH, $YEAR: $TIME \%nModified by: zachary_crimmel'
             w $argument
