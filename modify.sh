@@ -22,7 +22,8 @@ for argument in $@; do
             w $argument
             q
 END
-        $ ed $argument
+        $ ed $argument 
+        P
         s/Gradez/Grades
         w $argument
         q
