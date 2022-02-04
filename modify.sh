@@ -7,6 +7,7 @@ then
     exit 1
 fi
 
+#Variable to implement for date
 DAY=$(date +"%A")
 MONTH=$(date +"%b %d")
 YEAR=$(date +"%Y")
