@@ -22,11 +22,11 @@ for argument in $@; do
             w $argument
             q
 END
-        ed -s $argument <<%
+        ed -s $argument <<END
         r s/Gradez/Grades
         w $argument
         q
-%
+END
     elif [ -d "$argument" ];
     then
         echo "modify: $argument, is a directory."
