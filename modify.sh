@@ -17,7 +17,7 @@ TIME=$(date +"%H%M")
 for argument in $@; do
     if [[ $argument == *.txt ]];
     then 
-        ed -s , $argument <<END
+        ed -s 1,3 $argument <<END
         s/Gradez/Grades/g
         w $argument
         q
