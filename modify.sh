@@ -22,7 +22,7 @@ for argument in $@; do
             w $argument
             q
 END
-        sed $argument <<$
+        sed -e $argument <<$
         s/Gradez/Grades
         w $argument
         q
