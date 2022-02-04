@@ -18,14 +18,14 @@ for argument in $@; do
     if [[ $argument == *.txt ]];
     then 
         ed -s $argument <<END
+        s/Gradez/Grades
+        w $argument
+        q
+END
+        ed -s $argument <<END
             r !date +'Modified on: $DAY, $MONTH, $YEAR: $TIME \%nModified by: zachary_crimmel'
             w $argument
             q
-END
-        ed -s $argument <<END
-        r s/Gradez/Grades
-        w $argument
-        q
 END
     elif [ -d "$argument" ];
     then
